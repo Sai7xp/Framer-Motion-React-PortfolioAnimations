@@ -1,8 +1,14 @@
 // import the page components
 import AboutSection from "../components/AboutSection";
-import React from "react";
+import React, { Fragment } from "react";
+import ServicesSection from "../components/ServicesSection";
 const AboutUs = () => {
-  return <AboutSection />;
+  return (
+    <>
+      <AboutSection />
+      <ServicesSection />
+    </>
+  );
   // todo: services section
   // todo: faq section
 };
