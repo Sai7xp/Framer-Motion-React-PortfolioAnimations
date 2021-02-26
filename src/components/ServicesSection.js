@@ -6,11 +6,25 @@ import teamwork from "../images/teamwork.svg";
 import home2 from "../images/home2.png";
 import { About, Description, Hide, Image } from "../Styles";
 import styled from "styled-components";
+// ? below two imports functionality moved to useScrollHOOK.js file
+// import { useAnimation } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+import { useScroll } from "./useScrollHOOK";
+import { fade } from "../pages/animation";
 const ServicesSection = () => {
+  // const controls = useAnimation();
+  // const [element, view] = useInView({ threshold: 0.1 });
+  // console.log(view);
+  // if (view) {
+  //   controls.start("show");
+  // } else {
+  //   controls.start("hidden");
+  // }
+  const [element, controls] = useScroll();
   return (
-    <Services>
+    <Services variants={fade} animate={controls} initial="hidden" ref={element}>
       <Description>
-        <h2>
+        <h2> 
           High <span>quality</span> services
         </h2>
         <Cards>
@@ -65,14 +79,13 @@ const Cards = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 `;
 const Card = styled.div`
-  .icon{
-    display:flex;
-    align-items:center;
+  .icon {
+    display: flex;
+    align-items: center;
   }
-  h3{
-    margin-left:1.5rem;
-    font-size:2rem;
+  h3 {
+    margin-left: 1.5rem;
+    font-size: 2rem;
   }
-  
 `;
 export default ServicesSection;

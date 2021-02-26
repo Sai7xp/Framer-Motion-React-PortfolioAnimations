@@ -20,9 +20,9 @@ const GlobalStyle = createGlobalStyle`
         ${'' /* font-family: 'Akaya Kanadaka', cursive; */}
   }
     button{
-        font-family: 'Inter', sans-serif;
         font-weight: bold;
         font-size: 1.1rem;
+        font-family: 'Jost', sans-serif;
         cursor: pointer;
         padding: 1rem 2rem;
         border: 3px solid #23d997;
@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: 150%;
     }
     h4{
-        font-size: 2.5rem;
+        font-size: 1.9rem;
     }
     span{
         font-weight: bold;
