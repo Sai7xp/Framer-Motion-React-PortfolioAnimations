@@ -1,10 +1,14 @@
 # Chapter 4 - Portfolio-Animations
+- Demo URL: https://portfolio-animations-reactframer.netlify.app/
+- GitHub repo URL: https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations
+- Tags: framer-motion, react-dom, react-intersection-observer, react-router-dom, styled-components
 
-Date Created: Feb 10, 2021 9:40 AM
-GitHub repo URL: https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations
-Tags: framer-motion, react-dom, react-intersection-observer, react-router-dom, styled-components
-URL: https://portfolio-animations-reactframer.netlify.app/
-
+## Screenshots
+![home1](https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations/blob/main/screenshots/home1.png)
+![home2](https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations/blob/main/screenshots/home2.png)
+![home2](https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations/blob/main/screenshots/homeFAQ.png)
+![home2](https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations/blob/main/screenshots/4.png)
+![home2](https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations/blob/main/screenshots/ourWork.png)
 ## Things I've learned while building this project
 
 1. Using `styled-components` with react projects.
