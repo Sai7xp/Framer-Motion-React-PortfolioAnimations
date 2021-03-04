@@ -50,4 +50,5 @@ URL: https://portfolio-animations-reactframer.netlify.app/
 
     - The animations will trigger for components as soon as they enters viewport and they will be set to previous state when they leave the viewport. And many cool animations implemented using the `framer-motion` and `react-intersection-observer`
 6. Making the site responsive to look nice in small screens. And implementing the responsive NavBar with the help of `useState` Hook. 
+7. Highlighting the current active link Item on th
 7. Highlighting the current active link Item on the NavBar using `useLocation()` from `react-router-dom`.
