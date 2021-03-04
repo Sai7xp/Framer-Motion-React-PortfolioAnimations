@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Chapter 4 - Portfolio-Animations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Date Created: Feb 10, 2021 9:40 AM
+GitHub repo URL: https://github.com/MovingMelody/Framer-Motion-React-PortfolioAnimations
+Tags: framer-motion, react-dom, react-intersection-observer, react-router-dom, styled-components
+URL: https://portfolio-animations-reactframer.netlify.app/
 
-## Available Scripts
+## Things I've learned while building this project
 
-In the project directory, you can run:
+1. Using `styled-components` with react projects.
+2. React Router Dom → {`BrowserRouter`, `Router`, `Switch`} to handle the routing in react projects.
+3. Framer Motion → {`animating elements`, `page transitions`, `animating svg images` } to implement the nice and cool animation effects to our react app.
+4. Reusable Components → to toggle show/hide the answer content in FAQ section with cool animation (framer-motion → `AnimateSharedLayout`).
+    - Code
 
-### `npm start`
+        ```jsx
+        const Toggle = ({ children, title }) => {
+          const [toggle, setToggle] = useState(false);
+          return (
+            <motion.div layout onClick={() => setToggle(!toggle)}>
+              <motion.h4 layout>{title}</motion.h4>
+              {toggle ? children : "[expand]"}
+              <div className="faq-line"></div>
+            </motion.div>
+          ); 
+        };
+        ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+5. React Intersection Observer → {`useInView`} This Intersection Observer API can be used to find when an element enters or leaves the **viewport.**
+    - By using this `npm` package we implement **animations while scrolling** the page. {Custom Hook → `useScrollHoook.js`}
+        - Code
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+            ```jsx
+            // useScrollHook.js file
+            import { useAnimation } from "framer-motion";
+            import { useInView } from "react-intersection-observer";
+            export const useScroll = () => {
+              const controls = useAnimation();
+              const [element, view] = useInView({ threshold: 0.1 }); 
+            	// if the threshold value is set to 0.5 then the view will be true
+            	// only if the element's half view appears on the screen
+              if (view) {
+                controls.start("show");
+              } else {
+                controls.start("hidden");
+              }
+              return [element, controls];
+            };
+            ```
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    - The animations will trigger for components as soon as they enters viewport and they will be set to previous state when they leave the viewport. And many cool animations implemented using the `framer-motion` and `react-intersection-observer`
+6. Making the site responsive to look nice in small screens. And implementing the responsive NavBar with the help of `useState` Hook. 
+7. Highlighting the current active link Item on the NavBar using `useLocation()` from `react-router-dom`.
