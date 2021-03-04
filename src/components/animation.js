@@ -21,10 +21,21 @@ export const pageAnimation = {
 export const titleAnim = {
   hidden: {
     // y: -200,
-    y: 200,
+    y: 120,
   },
   show: {
     y: 0,
+    transition: { duration: 0.75, ease: "easeOut" },
+  },
+};
+export const titleAnim2 = {
+  hidden: {
+    // y: -200,
+    x: 100,
+  },
+
+  show: {
+    x: 0,
     transition: { duration: 0.75, ease: "easeOut" },
   },
 };
@@ -33,9 +44,9 @@ export const fade = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { type: "tween", ease: "easeOut", duration: 2, delay: 0.4 },
+    transition: { ease: "easeOut", duration: 0.75, delay: 0.4 },
   },
-};  
+};
 
 export const photoAnim = {
   hidden: { scale: 1.5, opacity: 0 },

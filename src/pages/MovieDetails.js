@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { MovieState } from "../MovieState";
-import { AnimatePresence , motion} from "framer-motion";
-import { pageAnimation } from "./animation";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../components/animation";
 const MovieDetails = () => {
   const history = useHistory(); // react-router-dom
   //   console.log(history);
@@ -74,6 +74,10 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 680px) {
+    display: block;
+    margin: 2rem;
+  }
 `;
 const StyledAward = styled.div`
   .line {

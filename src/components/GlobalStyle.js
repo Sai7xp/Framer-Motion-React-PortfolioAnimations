@@ -5,19 +5,19 @@ const GlobalStyle = createGlobalStyle`
         margin:0;
         padding:0;
         box-sizing:border-box;
-        @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Jost:wght@300;400&display=swap');
     }
       html{
         @media (max-width: 1500px) {
             font-size: 85%;
-        }
+        } 
     }
 
     body{
         background: #1b1b1b;
-        font-family: 'Inter', sans-serif;
+
         font-family: 'Jost', sans-serif;
-        ${'' /* font-family: 'Akaya Kanadaka', cursive; */}
+        overflow-x:hidden;
+        
   }
     button{
         font-weight: bold;

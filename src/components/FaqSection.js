@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { About } from "../Styles";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout, motion } from "framer-motion";
-import { fade, lineAnim } from "../pages/animation";
+import { fade } from "./animation";
 import { useScroll } from "./useScrollHOOK";
 const FaqSection = () => {
   // const [toggle, setToggle] = useState(false);
@@ -16,19 +16,34 @@ const FaqSection = () => {
       </h2>
       <AnimateSharedLayout>
         <Toggle title="Which question goes here">
-          <motion.div variants={fade} className="answer">
+          <motion.div
+            variants={fade}
+            initial="hidden"
+            animate="show"
+            className="answer"
+          >
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
           </motion.div>
         </Toggle>
         <Toggle title="How Everything is happening">
-          <motion.div variants={fade} className="answer">
+          <motion.div
+            variants={fade}
+            initial="hidden"
+            animate="show"
+            className="answer"
+          >
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
           </motion.div>
         </Toggle>
         <Toggle title="And another question goes here">
-          <motion.div variants={fade} className="answer">
+          <motion.div
+            variants={fade}
+            initial="hidden"
+            animate="show"
+            className="answer"
+          >
             <p>Lorem ipsum dolor sit amet.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
           </motion.div>

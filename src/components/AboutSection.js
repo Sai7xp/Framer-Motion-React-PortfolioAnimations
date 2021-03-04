@@ -2,16 +2,15 @@ import React from "react";
 import home1 from "../images/15.png";
 import { motion } from "framer-motion";
 import { About, Description, Hide, Image } from "../Styles";
-import { titleAnim, photoAnim } from "../pages/animation";
+import { titleAnim, photoAnim } from "./animation";
 import Wave from "./wave";
-import styled from "styled-components";
 function AboutSection() {
   const titleAnimation = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { duration: 3 } },
   };
   const slideAnimation = {
-    hidden: { x: 100 },
+    hidden: { x: 100 }, 
     show: { x: 0, transition: { duration: 1.5, ease: "easeOut" } },
   };
   return (
@@ -26,8 +25,6 @@ function AboutSection() {
           <Hide>
             <motion.h2
               variants={titleAnim}
-              // animate={{ opacity: 1, transition: { duration: 2 } }}
-              // initial={{ opacity: 0 }}
             >
               We work to make
             </motion.h2>

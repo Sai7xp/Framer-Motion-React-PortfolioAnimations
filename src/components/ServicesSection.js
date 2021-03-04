@@ -4,13 +4,13 @@ import clock from "../images/clock.svg";
 import money from "../images/money.svg";
 import teamwork from "../images/teamwork.svg";
 import home2 from "../images/home2.png";
-import { About, Description, Hide, Image } from "../Styles";
+import { About, Description, Image } from "../Styles";
 import styled from "styled-components";
 // ? below two imports functionality moved to useScrollHOOK.js file
 // import { useAnimation } from "framer-motion";
 // import { useInView } from "react-intersection-observer";
 import { useScroll } from "./useScrollHOOK";
-import { fade } from "../pages/animation";
+import { fade } from "./animation";
 const ServicesSection = () => {
   // const controls = useAnimation();
   // const [element, view] = useInView({ threshold: 0.1 });
@@ -24,7 +24,7 @@ const ServicesSection = () => {
   return (
     <Services variants={fade} animate={controls} initial="hidden" ref={element}>
       <Description>
-        <h2> 
+        <h2>
           High <span>quality</span> services
         </h2>
         <Cards>
@@ -73,10 +73,18 @@ const Services = styled(About)`
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
   }
+  @media (max-width: 480px) {
+    p {
+      padding-right: 0rem;
+    }
+  }
 `;
 const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  @media (max-width: 480px) {
+    display: block;
+  }
 `;
 const Card = styled.div`
   .icon {
